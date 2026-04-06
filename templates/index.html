@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img
+                src="{% static 'img/high-angle-beautiful-buildings-nighttime.jpg' %}"
+                class="d-block w-100"
+                alt="Buildings"
+            />
+        </div>
+        <div class="carousel-item">
+            <img
+                src="{% static 'img/wp11754513.jpg' %}"
+                class="d-block w-100"
+                alt="Slide 2"
+            />
+        </div>
+        <div class="carousel-item">
+            <img
+                src="{% static 'img/wp10147514-cyberpunk-night-city-wallpapers.jpg' %}"
+                class="d-block w-100"
+                alt="Cyberpunk"
+            />
+        </div>
+    </div>
+    <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+    >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+    >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock content %}

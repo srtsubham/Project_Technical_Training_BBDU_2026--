@@ -1,23 +1,26 @@
-from django.shortcuts import render,HttpResponse,redirect
-
+from django.shortcuts import render, redirect
 from .models import Contact
-# Create your views here.
-def index(request):
-    return render(request,'index.html')
-def products(request):
-    return render(request,'products.html')
-def about(request):
-    return render(request,'about.html')
-def contact(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        emailid = request.POST.get('email')
-        msg = request.POST.get('msg')
-        contact = Contact(name=name, phone=phone, emailid=emailid, msg=msg)
-        contact.save()
-        return redirect('/contact/')
 
-    return render(request,'contact.html')
-def catalogue(request):
-    return render(request,'catalogue.html')
+def index(r):
+    return render(r, 'index.html')
+
+def products(r):
+    return render(r, 'products.html')
+
+def about(r):
+    return render(r, 'about.html')
+
+def contact(r):
+    if r.method == "POST":
+        n = r.POST.get('name')
+        p = r.POST.get('phone')
+        e = r.POST.get('email')
+        m = r.POST.get('msg')
+        o = Contact(name=n, phone=p, emailid=e, msg=m)
+        o.save()
+        return redirect('/contact/')
+    d = Contact.objects.all()
+    return render(r, 'contact.html', {'data': d})
+
+def catalogue(r):
+    return render(r, 'catalogue.html')

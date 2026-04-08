@@ -1,28 +1,53 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}
-Contact
-{% endblock title %}
 {% block content %}
-<div class = "container">
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/contact/" method="POST">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" name="phone" class="form-control">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Message</label>
+                    <input type="text" name="msg" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </div>
 
-<form method = "POST">
-{% csrf_token %}
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
+    <div class="mt-5">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in data %}
+            <tr>
+              <td>{{i.name}}</td>
+              <td>{{i.phone}}</td>
+              <td>{{i.emailid}}</td>
+              <td>{{i.msg}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
 </div>
-{% endblock content %}
+{% endblock %}

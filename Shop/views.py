@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Contact
+from django.contrib.auth.models import User
 
 def index(r):
     return render(r, 'index.html')
@@ -24,3 +25,25 @@ def contact(r):
 
 def catalogue(r):
     return render(r, 'catalogue.html')
+
+def signupView(r):
+    if request.method == "POST":
+
+        m5 = r.POST.get('emailAddress')
+        m6 = r.POST.get('username')
+        m7 = r.POST.get('password')
+        o = Contact(emailAddress=m5, username=m6, password=m7)
+        o.save()
+        return redirect('/signup/')
+        if password==cpassword:
+            user = User.objects.create_user(emailAddress, username, password)
+            user.first_name = firstName
+            user.last_name = lastName
+            user.save()
+            return redirect('/signup/')
+    return render(r, 'signup.html')
+
+def loginView(r):
+    if request.method == "POST":
+
+    return render(r, 'login.html')

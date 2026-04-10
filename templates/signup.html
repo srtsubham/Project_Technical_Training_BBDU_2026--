@@ -15,7 +15,7 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-            <form method = "POST">
+            <form method="POST" action="/signup/">
 
               {% csrf_token %}
 
@@ -24,7 +24,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="firstname" class="form-control form-control-lg" />
+                    <input type="text" id="firstname" name="firstname" class="form-control form-control-lg" />
                     <label class="form-label" for="firstname">First Name</label>
                   </div>
 
@@ -32,7 +32,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="lastname" class="form-control form-control-lg" />
+                    <input type="text" id="lastname" name="lastname" class="form-control form-control-lg" />
                     <label class="form-label" for="lastname">Last Name</label>
                   </div>
 
@@ -43,7 +43,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div data-mdb-input-init class="form-outline">
-                    <input type="email" id="emailAddress" class="form-control form-control-lg" />
+                    <input type="email" id="emailAddress" name="emailAddress" class="form-control form-control-lg" required />
                     <label class="form-label" for="emailAddress">Email</label>
                   </div>
 
@@ -51,7 +51,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div data-mdb-input-init class="form-outline">
-                    <input type="tel" id="username" class="form-control form-control-lg" />
+                    <input type="text" id="username" name="username" class="form-control form-control-lg" required />
                     <label class="form-label" for="username">Username</label>
                   </div>
 
@@ -61,7 +61,7 @@
               <div class="col-md-6 mb-4 pb-2">
 
                   <div data-mdb-input-init class="form-outline">
-                    <input type="char" id="password" class="form-control form-control-lg" />
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" required />
                     <label class="form-label" for="password">Password</label>
                   </div>
 

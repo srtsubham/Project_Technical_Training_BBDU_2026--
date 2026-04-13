@@ -1,22 +1,60 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+.text-orange {
+    color: #f27427 !important;
+}
+
+.bg-orange {
+    background-color: #f27427 !important;
+}
+
 .navbar-brand {
-  letter-spacing: 3px;
-  color: #c24244;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
-.navbar-brand:hover {
-	color: #c24244;
+.nav-link {
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.navbar-scroll .nav-link,
-.navbar-scroll .fa-bars {
-  color: #7f4722;
+.nav-link:hover {
+    color: #f27427;
 }
 
-.navbar-scrolled .nav-link,
-.navbar-scrolled .fa-bars {
-  color: #7f4722;
+.btn-primary {
+    background-color: #f27427;
+    border-color: #f27427;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
-.navbar-scrolled {
-  background-color: #ffede7;
+.btn-primary:hover {
+    background-color: #d9621b;
+    border-color: #d9621b;
+}
+
+.btn-outline-orange {
+    border: 2px solid #f27427;
+    color: #f27427;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-orange:hover {
+    background-color: #f27427;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: #f27427;
+    box-shadow: 0 0 0 0.2rem rgba(242, 116, 39, 0.25);
+}
+
+.anim {
+    transition: all 0.3s ease-in-out;
 }

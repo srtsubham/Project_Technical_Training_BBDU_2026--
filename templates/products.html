@@ -1,8 +1,54 @@
 {% extends 'base.html' %}
 {% block title %}Products{% endblock title %}
 {% block content %}
-<div class="container my-5 text-center">
-    <h2 class="text-orange fw-bold mb-4">Our Products</h2>
-    <p class="text-muted">Pharmaceutical and healthcare supply integrations map here.</p>
+<div class="container my-5">
+    <h2 class="txt-red fw-bold mb-5 text-center text-uppercase">Pharmacy Inventory</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-0 bg-panel">
+                <div class="card-header bg-red text-white fw-bold border-0">
+                    Cardiovascular Care
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Beta Blockers <span class="badge bg-red rounded-pill">Stocked</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Statins <span class="badge bg-red rounded-pill">Stocked</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 bg-panel">
+                <div class="card-header bg-red text-white fw-bold border-0">
+                    Antibiotics
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Amoxicillin <span class="badge bg-dark text-secondary rounded-pill border border-secondary">Low</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Ciprofloxacin <span class="badge bg-red rounded-pill">Stocked</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 bg-panel">
+                <div class="card-header bg-red text-white fw-bold border-0">
+                    Pain Management
+                </div>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Ibuprofen <span class="badge bg-red rounded-pill">Stocked</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-light border-dark">
+                        Acetaminophen <span class="badge bg-red rounded-pill">Stocked</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

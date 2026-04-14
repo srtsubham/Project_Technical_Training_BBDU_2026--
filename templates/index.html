@@ -1,50 +1,117 @@
 {% extends "base.html" %}
-{% load static %}
-{% block title %}
-HOME
-{% endblock title %}
+{% block title %}HOME{% endblock title %}
 {% block content %}
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+<div id="heroCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img
-                src="{% static 'img/high-angle-beautiful-buildings-nighttime.jpg' %}"
-                class="d-block w-100"
-                alt="Buildings"
-            />
+            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2000&auto=format&fit=crop" class="d-block w-100" style="object-fit: cover; height: 100vh; filter: brightness(0.4);" alt="Medical Reception">
+            <div class="carousel-caption d-none d-md-block p-5 rounded bg-panel" style="bottom: 20%;">
+                <h1 class="txt-red fw-bold display-3">Welcome to SR Polyclinic</h1>
+                <p class="fs-4 text-light">A multidisciplinary team of experts ready to assist you.</p>
+            </div>
         </div>
         <div class="carousel-item">
-            <img
-                src="{% static 'img/wp11754513.jpg' %}"
-                class="d-block w-100"
-                alt="Slide 2"
-            />
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2000&auto=format&fit=crop" class="d-block w-100" style="object-fit: cover; height: 100vh; filter: brightness(0.4);" alt="Clinical Laboratory">
+            <div class="carousel-caption d-none d-md-block p-5 rounded bg-panel" style="bottom: 20%;">
+                <h1 class="txt-red fw-bold display-3">Molecular Pathology</h1>
+                <p class="fs-4 text-light">Advanced testing protocols in a highly controlled environment.</p>
+            </div>
         </div>
         <div class="carousel-item">
-            <img
-                src="{% static 'img/wp10147514-cyberpunk-night-city-wallpapers.jpg' %}"
-                class="d-block w-100"
-                alt="Cyberpunk"
-            />
+            <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=2000&auto=format&fit=crop" class="d-block w-100" style="object-fit: cover; height: 100vh; filter: brightness(0.4);" alt="Surgical Innovation">
+            <div class="carousel-caption d-none d-md-block p-5 rounded bg-panel" style="bottom: 20%;">
+                <h1 class="txt-red fw-bold display-3">Surgical Innovation</h1>
+                <p class="fs-4 text-light">State of the art instrumentation for complex procedures.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2000&auto=format&fit=crop" class="d-block w-100" style="object-fit: cover; height: 100vh; filter: brightness(0.4);" alt="Radiology Diagnostics">
+            <div class="carousel-caption d-none d-md-block p-5 rounded bg-panel" style="bottom: 20%;">
+                <h1 class="txt-red fw-bold display-3">Diagnostic Clarity</h1>
+                <p class="fs-4 text-light">High fidelity imaging to expose the unseen.</p>
+            </div>
         </div>
     </div>
-    <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-    >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon p-4 bg-dark rounded-circle" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-    >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon p-4 bg-dark rounded-circle" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>
+
+<div class="container-fluid py-5 text-center border-0" style="background-color: #0a0a0a !important;">
+    <div class="row justify-content-center border-0">
+        <div class="col-md-8 py-5">
+            <h2 class="txt-red fw-bold mb-4">A Legacy of Trust</h2>
+            <p class="text-secondary fs-5">SR Polyclinic integrates multidisciplinary expertise with cutting edge diagnostics to provide a healthcare experience that is as seamless as it is effective.</p>
+        </div>
+    </div>
+</div>
+
+<div id="scrollTypingContainer" style="height: 300vh; background-color: #050505 !important; position: relative; border: none;">
+    <div style="position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px;">
+
+        <div class="med-grid-container" id="scrollBg" style="opacity: 0;">
+            <div class="med-grid"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, transparent 0%, #050505 80%); z-index: 1;"></div>
+        </div>
+
+        <div id="flareNode" class="lens-flare"></div>
+
+        <div id="medicalCross" class="med-cross-container">
+            <div class="med-cross-bar med-cross-horizontal"></div>
+            <div class="med-cross-bar med-cross-vertical"></div>
+        </div>
+
+        <h1 id="dynamicTextTarget" style="position: relative; z-index: 3; color: #ffffff; font-size: 6vw; font-weight: 700; text-align: center; max-width: 90vw; line-height: 1.2; text-shadow: 0 0 30px rgba(255,59,59,0.9); margin: 0;"></h1>
+    </div>
+</div>
+
+<div class="container-fluid py-5 text-center border-0" style="background-color: #050505 !important;">
+    <div class="py-5">
+        <h2 class="fw-bold mb-4" style="color: #ffffff; font-size: 3.5rem;">Secure Your Wellbeing</h2>
+        <p class="text-secondary mb-5 fs-4">Priority access to medical excellence available 24 hours.</p>
+        <button type="button" class="btn-3d" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+            Book an Appointment
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-panel">
+      <div class="modal-header border-bottom border-dark">
+        <h5 class="modal-title fw-bold txt-red">Schedule Visit</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form>
+          <div class="mb-3">
+            <label class="form-label" style="color: white;">Full Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" style="color: white;">Department</label>
+            <select class="form-select">
+              <option>General Medicine</option>
+              <option>Cardiology</option>
+              <option>Pediatrics</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" style="color: white;">Preferred Date</label>
+            <input type="date" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-top border-dark">
+        <button type="button" class="btn btn-outline-red" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn-3d" style="padding: 10px 20px; font-size: 1rem;" data-bs-dismiss="modal">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock content %}

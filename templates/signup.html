@@ -4,12 +4,12 @@
 <div class="container py-5 h-100">
     <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-lg-9 col-xl-7">
-            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+            <div class="card bg-panel border-0" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
-                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-orange fw-bold">Registration Form</h3>
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 txt-red fw-bold">Registration Form</h3>
 
                     {% if error %}
-                    <div class="alert alert-danger">{{ error }}</div>
+                    <div class="alert alert-danger bg-red border-0 text-white">{{ error }}</div>
                     {% endif %}
 
                     <form method="POST" action="/signup/">
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="mt-4 pt-2">
-                            <input class="btn btn-primary btn-lg w-100" type="submit" value="Submit" />
+                            <button class="btn-3d w-100" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

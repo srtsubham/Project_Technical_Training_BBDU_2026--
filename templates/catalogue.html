@@ -1,8 +1,42 @@
 {% extends 'base.html' %}
 {% block title %}Catalogue{% endblock title %}
 {% block content %}
-<div class="container my-5 text-center">
-    <h2 class="text-orange fw-bold mb-4">Medical Catalogue</h2>
-    <p class="text-muted">Equipment and testing services inventory map here.</p>
+<div class="container my-5">
+    <h2 class="txt-red fw-bold mb-5 text-center text-uppercase">Medical Services</h2>
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 bg-panel h-100">
+                <div class="card-body text-center p-4">
+                    <div class="bg-red text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="m-0 fw-bold">1</h4>
+                    </div>
+                    <h5 class="fw-bold text-white">Pathology Labs</h5>
+                    <p class="text-secondary">Comprehensive blood and tissue analysis with rapid reporting systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 bg-panel h-100">
+                <div class="card-body text-center p-4">
+                    <div class="bg-red text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="m-0 fw-bold">2</h4>
+                    </div>
+                    <h5 class="fw-bold text-white">Radiology Imaging</h5>
+                    <p class="text-secondary">High resolution scanning including MRI and XRAY modalities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 bg-panel h-100">
+                <div class="card-body text-center p-4">
+                    <div class="bg-red text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="m-0 fw-bold">3</h4>
+                    </div>
+                    <h5 class="fw-bold text-white">Emergency Care</h5>
+                    <p class="text-secondary">Critical trauma response units operating continuously without pause.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

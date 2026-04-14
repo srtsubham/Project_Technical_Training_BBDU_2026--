@@ -1,60 +1,177 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
+html, body {
+    background-color: #050505 !important;
+    color: #e0e0e0;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.text-orange {
-    color: #f27427 !important;
+main {
+    background-color: #050505 !important;
 }
 
-.bg-orange {
-    background-color: #f27427 !important;
+h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title {
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-.navbar-brand {
-    letter-spacing: 2px;
+.bg-panel {
+    background-color: #0a0a0a !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.02), 0 8px 20px rgba(0, 0, 0, 0.9);
+    color: #e0e0e0;
+}
+
+.txt-red {
+    color: #ff3b3b !important;
+}
+
+.bg-red {
+    background: linear-gradient(135deg, #a30000, #ff3b3b) !important;
+    color: #ffffff;
+}
+
+/* 3D Tactile Button Logic */
+.btn-3d {
+    background: linear-gradient(135deg, #b30000, #ff3b3b);
+    border: none;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 18px 50px;
+    border-radius: 10px;
+    box-shadow: 0 8px 0 #7a0000, 0 15px 25px rgba(0,0,0,0.7), inset 0 2px 3px rgba(255,255,255,0.4);
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-3d:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #7a0000, 0 5px 10px rgba(0,0,0,0.7), inset 0 2px 3px rgba(255,255,255,0.4);
+}
+
+.btn-outline-red {
+    border: 2px solid #ff3b3b;
+    color: #ff3b3b;
+    background-color: transparent;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-red:hover {
+    background-color: #ff3b3b;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.4);
 }
 
 .nav-link {
-    color: #333333;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: #b0b0b0;
+    position: relative;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: #f27427;
+    color: #ff3b3b;
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.4);
 }
 
-.btn-primary {
-    background-color: #f27427;
-    border-color: #f27427;
-    color: #ffffff;
+.form-label {
+    color: #d1d1d1 !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-control, .form-select {
+    background-color: #121212 !important;
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #d9621b;
-    border-color: #d9621b;
+.form-control:focus, .form-select:focus {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ff3b3b !important;
+    box-shadow: 0 0 15px rgba(255, 59, 59, 0.4) !important;
 }
 
-.btn-outline-orange {
-    border: 2px solid #f27427;
-    color: #f27427;
-    background-color: transparent;
-    transition: all 0.3s ease;
+/* Layer 0: Animated Medical Grid */
+.med-grid-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.btn-outline-orange:hover {
-    background-color: #f27427;
-    color: #ffffff;
+.med-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+        linear-gradient(rgba(255, 59, 59, 0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 59, 59, 0.2) 2px, transparent 2px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(60deg) translateY(0);
+    animation: gridScan 10s linear infinite;
 }
 
-.form-control:focus {
-    border-color: #f27427;
-    box-shadow: 0 0 0 0.2rem rgba(242, 116, 39, 0.25);
+@keyframes gridScan {
+    0% { transform: perspective(600px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(600px) rotateX(60deg) translateY(60px); }
 }
 
-.anim {
-    transition: all 0.3s ease-in-out;
+/* Layer 1: Lens Flare */
+.lens-flare {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255,59,59,0.25) 0%, rgba(255,59,59,0.05) 40%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: screen;
+}
+
+/* Layer 2: Glass Medical Cross */
+.med-cross-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 320px;
+    height: 320px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.med-cross-bar {
+    position: absolute;
+    background-color: rgba(255, 59, 59, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255, 59, 59, 0.2), inset 0 0 10px rgba(255, 59, 59, 0.2);
+    border: 1px solid rgba(255, 59, 59, 0.3);
+    border-radius: 12px;
+}
+
+.med-cross-horizontal {
+    width: 100%;
+    height: 28%;
+}
+
+.med-cross-vertical {
+    width: 28%;
+    height: 100%;
 }

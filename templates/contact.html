@@ -1,53 +1,59 @@
 {% extends 'base.html' %}
-
+{% block title %}Contact{% endblock title %}
 {% block content %}
 <div class="container my-5">
+    <h2 class="txt-red fw-bold mb-5 text-center text-uppercase">Contact Administration</h2>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form action="/contact/" method="POST">
-                {% csrf_token %}
-                <div class="mb-4">
-                    <label class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control">
-                </div>
-                <div class="mb-4">
-                    <label class="form-label">Phone</label>
-                    <input type="tel" name="phone" class="form-control">
-                </div>
-                <div class="mb-4">
-                    <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control">
-                </div>
-                <div class="mb-4">
-                    <label class="form-label">Message</label>
-                    <input type="text" name="msg" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Submit</button>
-            </form>
+        <div class="col-md-8">
+            <div class="card bg-panel border-0 p-4 mb-5">
+                <form action="/contact/" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="phone" class="form-control">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Message</label>
+                        <input type="text" name="msg" class="form-control">
+                    </div>
+                    <button type="submit" class="btn-3d w-100 mt-3">Submit Record</button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class="mt-5">
-        <table class="table text-center">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Email ID</th>
-              <th scope="col">Message</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for i in data %}
-            <tr>
-              <td>{{i.name}}</td>
-              <td>{{i.phone}}</td>
-              <td>{{i.emailid}}</td>
-              <td>{{i.msg}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+    <div class="card bg-panel border-0 p-4">
+        <h4 class="txt-red fw-bold mb-4">Submitted Inquiries</h4>
+        <div class="table-responsive">
+            <table class="table table-dark table-hover table-borderless text-center align-middle m-0">
+              <thead style="border-bottom: 2px solid #ff3b3b;">
+                <tr>
+                  <th scope="col" class="py-3">Name</th>
+                  <th scope="col" class="py-3">Phone</th>
+                  <th scope="col" class="py-3">Email ID</th>
+                  <th scope="col" class="py-3">Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for contactItem in data %}
+                <tr style="border-bottom: 1px solid #1f1f1f;">
+                  <td class="py-3 text-light">{{contactItem.name}}</td>
+                  <td class="py-3 text-secondary">{{contactItem.phone}}</td>
+                  <td class="py-3 text-secondary">{{contactItem.emailid}}</td>
+                  <td class="py-3 text-light">{{contactItem.msg}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
     </div>
 </div>
 {% endblock %}

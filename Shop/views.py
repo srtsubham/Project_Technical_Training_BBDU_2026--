@@ -14,7 +14,7 @@ def about(r):
 
 def contact(r):
     if r.method == "POST":
-        n = r.POST.get('name')
+        n = r.POST.get('name') #my name
         p = r.POST.get('phone')
         e = r.POST.get('email')
         m = r.POST.get('msg')

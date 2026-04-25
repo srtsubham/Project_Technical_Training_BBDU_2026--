@@ -14,24 +14,7 @@ def about(r):
 
 def contact(r):
     if r.method == "POST":
-        n = r.POST.get('name') #my name
-        p = r.POST.get('phone')
-        e = r.POST.get('email')
-        m = r.POST.get('msg')
-        o = Contact(name=n, phone=p, emailid=e, msg=m)
-        o.save()
-        return redirect('/contact/')
-    d = Contact.objects.all()
-    return render(r, 'contact.html', {'data': d})
-
-def catalogue(r):
-    return render(r, 'catalogue.html')
-
-def signupView(r):
-    if r.method == "POST":
-        m5 = r.POST.get('emailAddress')
-        m6 = r.POST.get('username')
-        m7 = r.POST.get('password')
+     
 
         if m6 and m7:
             u = User.objects.create_user(username=m6, email=m5, password=m7)

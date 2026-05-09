@@ -49,7 +49,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Med.wsgi.application'
 
-DATABASES = { #DATABASE 
+DATABASES = { #DATABA
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',

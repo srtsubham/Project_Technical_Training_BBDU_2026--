@@ -10,7 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.onrender.com']
 
 INSTALLED_APPS = [
-    'Shop.apps.ShopConfig',
+    'Shop.apps.ShopConfig', #hey
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

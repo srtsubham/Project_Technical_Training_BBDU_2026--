@@ -12,7 +12,6 @@ def products(r):
 def about(r):
     return render(r, 'about.html')
 
-def contact(r):
     if r.method == "POST":
      
 

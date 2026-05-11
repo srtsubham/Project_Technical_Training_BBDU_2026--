@@ -10,7 +10,7 @@ def products(r):
     return render(r, 'products.html')
 
 def about(r):
-    return render(r, 'about.html') #hello
+    return render(r, 'about.html') 
 
     if r.method == "POST":
      

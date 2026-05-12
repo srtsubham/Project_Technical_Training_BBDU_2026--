@@ -4,7 +4,7 @@ from .models import Contact
 from django.contrib.auth.models import User
 
 def index(r):
-    return render(r, 'index.html') #version 2.3V
+    return render(r, 'index.html') #version 2.46V
 
 def products(r):
     return render(r, 'products.html')

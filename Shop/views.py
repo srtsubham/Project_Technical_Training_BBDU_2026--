@@ -12,7 +12,7 @@ def products(r):
 def about(r):
     return render(r, 'about.html') 
 
-    if r.method == "POST": #V3.6
+    if r.method == "POST": #V3.8
      
 
         if m6 and m7:

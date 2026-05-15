@@ -1,26 +1,26 @@
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
-from .models import Contact
-from django.contrib.auth.models import User
+    from django.shortcuts import render, redirect
+    from .models import Contact
+    from django.contrib.auth.models import User
 
-def index(r):
-    return render(r, 'index.html')
+    def index(r):
+        return render(r, 'index.html')
 
-def products(r):
-    return render(r, 'products.html')
+    def products(r):
+        return render(r, 'products.html')
 
-def about(r):
-    return render(r, 'about.html') 
+    def about(r):
+        return render(r, 'about.html') 
 
-    if r.method == "POST": #V4.9
-     
+        if r.method == "POST": #V5.1
+        
 
-        if m6 and m7:
-            u = User.objects.create_user(username=m6, email=m5, password=m7)
-            u.save()
-            return redirect('/login/')
-        else:
-            return render(r, 'signup.html', {"error": "Valid data required"})
+            if m6 and m7:
+                u = User.objects.create_user(username=m6, email=m5, password=m7)
+                u.save()
+                return redirect('/login/')
+            else:
+                return render(r, 'signup.html', {"error": "Valid data required"})
 
     return render(r, 'signup.html')
 

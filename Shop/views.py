@@ -12,7 +12,7 @@ from django.contrib.auth import authenticate, login, logout
     def about(r):
         return render(r, 'about.html') 
 
-        if r.method == "POST": #V10.1
+        if r.method == "POST": #V10.2
         
 
             if m6 and m7:
